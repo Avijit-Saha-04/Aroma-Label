@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aroma Label | Our Story & Mission</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reusing some styles for consistency */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 8px 25px rgba(106, 13, 173, 0.3);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, var(--accent-light), var(--accent-color));
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(106, 13, 173, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header (Consistent with index.html) -->
+    <header>
+        <div class="top-bar">
+            <i class="fas fa-plane"></i>
+            <h4> We don't sell anything.This is a creation of Avijit Saha.You can buy him a coffee.</h4>
+        </div>
+        <nav>
+            <a href="index.html" class="logo">AROMA</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                 <button class="nav-icon cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="text-gray-700">
+        <!-- Hero Section -->
+        <section class="relative h-[50vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=2070&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <h1 class="text-5xl md:text-7xl text-white font-bold tracking-wider animate-fadeIn">Our Story</h1>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section class="py-20 px-6 md:px-12 bg-gray-50">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-light text-gray-800 mb-6">OUR MISSION</h2>
+                <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+                    At Aroma Label, our mission is simple: to bring you the world’s finest coffee, crafted with passion and precision. We believe that a great cup of coffee is more than just a drink; it's an experience. It’s a moment of peace, a catalyst for conversation, and a ritual that starts the day right. We are dedicated to ethical sourcing, meticulous roasting, and delivering unparalleled freshness directly to your door.
+                </p>
+            </div>
+        </section>
+        
+        <!-- The Journey Section -->
+        <section class="py-20 px-6 md:px-12">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-3xl font-light text-gray-800 mb-4">THE JOURNEY FROM BEAN TO CUP</h3>
+                    <p class="mb-4 leading-loose">
+                        Our journey began with a trip to the highlands of Ethiopia, the birthplace of coffee. It was there we discovered the rich history and deep-rooted traditions that make each bean unique. We built direct relationships with farmers who share our commitment to sustainable and ethical practices. This direct trade model ensures fair wages for their hard work and allows us to select only the highest quality, single-origin beans.
+                    </p>
+                     <p class="leading-loose">
+                        Back in our roastery, each batch is carefully roasted to unlock its distinct flavor profile—from bright citrus notes to deep chocolate undertones. This obsession with detail is what defines Aroma Label.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop" alt="Coffee beans being sorted" class="rounded-lg shadow-2xl w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Commitment Section -->
+        <section class="py-20 px-6 md:px-12 bg-gray-50">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl font-light text-gray-800 mb-10">OUR COMMITMENT</h2>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="p-8 bg-white rounded-lg shadow-lg">
+                        <i class="fas fa-seedling text-4xl text-purple-600 mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-2">Ethical Sourcing</h4>
+                        <p>We partner directly with farmers, ensuring fair trade practices that support communities and promote sustainability.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-lg shadow-lg">
+                        <i class="fas fa-fire text-4xl text-purple-600 mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-2">Artisanal Roasting</h4>
+                        <p>Our master roasters craft each batch with precision to bring out the unique, complex flavors in every bean.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-lg shadow-lg">
+                        <i class="fas fa-box-open text-4xl text-purple-600 mb-4"></i>
+                        <h4 class="text-xl font-semibold mb-2">Unmatched Freshness</h4>
+                        <p>We roast to order, so your coffee is as fresh as possible when it arrives at your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer (Consistent with index.html) -->
+    <footer id="contact-footer">
+        <div class="footer-content">
+             <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="index.html">All Products</a></li>
+                </ul>
+            </div>
+             <div class="footer-section">
+                <h3>Learn</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                </ul>
+            </div>
+             <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter-section">
+                <h3>Newsletter</h3>
+                <p>Stay up to date with new product launches and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aroma Label. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
