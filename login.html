@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Aroma Label</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <i class="fas fa-plane"></i>
+           <h4> We don't sell anything.This is a creation of Avijit Saha.You can buy him a coffee.</h4>
+        </div>
+        <nav>
+            <a href="index.html" class="logo">AROMA</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons" id="user-container">
+                 <a href="login.html" class="nav-icon"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Form Section -->
+    <main class="flex items-center justify-center py-20 px-6">
+        <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl w-full max-w-md">
+            <h2 class="text-3xl font-light text-center text-gray-800 mb-8">Login to Your Account</h2>
+            <form id="loginForm">
+                <div class="mb-5">
+                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition" required>
+                </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                    <input type="password" id="password" name="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition" required>
+                </div>
+                <div id="loginError" class="text-red-500 text-center mb-4 min-h-[20px]"></div>
+                <div>
+                    <button type="submit" class="w-full py-3 px-6 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition duration-300">
+                        Login
+                    </button>
+                </div>
+            </form>
+            <p class="text-center text-gray-600 mt-6">
+                Don't have an account? <a href="#" id="showSignUp" class="text-purple-600 hover:underline">Sign Up</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <script>
+        // --- ADD YOUR FIREBASE CONFIGURATION HERE ---
+        const firebaseConfig = {
+          apiKey: "AIzaSy...",
+          authDomain: "your-project-id.firebaseapp.com",
+          // ... Paste your entire config object here
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
+        const showSignUp = document.getElementById('showSignUp');
+
+        // Handle Login
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = loginForm.email.value;
+            const password = loginForm.password.value;
+            loginError.textContent = '';
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then(userCredential => {
+                    // Redirect to home page on successful login
+                    window.location.href = 'index.html';
+                })
+                .catch(error => {
+                    loginError.textContent = error.message;
+                });
+        });
+
+        // Simple "Sign Up" handler
+        showSignUp.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginError.textContent = 'Sign up by creating an account on the main page.';
+            // In a full app, this would link to a separate sign-up page or change the form.
+        });
+    </script>
+
+</body>
+</html>
