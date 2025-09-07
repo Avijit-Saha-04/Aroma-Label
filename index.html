@@ -18,10 +18,9 @@
                 </button>
             </div>
             <nav class="mobile-nav">
-                <a href="#shop">Shop</a>
-                <a href="#collections">Collections</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </div>
@@ -50,26 +49,27 @@
     <header>
         <div class="top-bar">
             <i class="fas fa-plane"></i>
-            Free Shipping on Orders Above ₹999
+           <h4> We don't sell anything.This is a creation of Avijit Saha.You can buy him a coffee.</h4>
         </div>
         <nav>
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
                 <i class="fas fa-bars"></i>
             </button>
-            <div class="logo">AROMA</div>
+            <a href="index.html" class="logo">AROMA</a>
             <ul class="nav-links">
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#collections">Collections</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-icons">
                 <button class="nav-icon search-btn" id="searchBtn">
                     <i class="fas fa-search"></i>
                 </button>
-                <button class="nav-icon">
-                    <i class="fas fa-user"></i>
-                </button>
+ <div id="user-container">
+    <a href="login.html" class="nav-icon" aria-label="Login">
+        <i class="fas fa-user"></i>
+    </a>
+</div>
                 <button class="nav-icon cart-btn" id="cartBtn">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count" id="cartCount">0</span>
@@ -88,29 +88,32 @@
     </header>
 
     <section class="hero">
-        <div class="hero-slideshow">
-            <div class="hero-slide active" style="background-image: url('images/banner1.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('images/banner2.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('images/banner3.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('images/banner4.jpg');"></div>
-            <div class="hero-slide" style="background-image: url('images/banner5.jpg');"></div>
-        </div>
+        <div class="slideshow-container">
+            <div class="mySlides active" style="background-image: url('images/banner1.jpg');"></div>
+            <div class="mySlides" style="background-image: url('images/banner2.jpg');"></div>
+            <div class="mySlides" style="background-image: url('images/banner3.jpg');"></div>
+            <div class="mySlides" style="background-image: url('images/banner4.jpg');"></div>
+            <div class="mySlides" style="background-image: url('images/banner5.jpg');"></div>
         
-        <div class="hero-controls">
-            <button class="hero-prev" id="heroPrev">
+            <a class="prev" onclick="aromaApp.plusSlides(-1)">
                 <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="hero-next" id="heroNext">
+            </a>
+            <a class="next" onclick="aromaApp.plusSlides(1)">
                 <i class="fas fa-chevron-right"></i>
-            </button>
+            </a>
         </div>
         
         <div class="hero-dots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-            <span class="dot" data-slide="3"></span>
-            <span class="dot" data-slide="4"></span>
+            <span class="dot" onclick="aromaApp.currentSlide(1)"></span>
+            <span class="dot" onclick="aromaApp.currentSlide(2)"></span>
+            <span class="dot" onclick="aromaApp.currentSlide(3)"></span>
+            <span class="dot" onclick="aromaApp.currentSlide(4)"></span>
+            <span class="dot" onclick="aromaApp.currentSlide(5)"></span>
+        </div>
+
+        <div class="hero-overlay-content">
+            <h1>Brew Perfection</h1>
+            <p>Artisanal Coffee Crafted with Passion & Precision</p>
         </div>
         
         <div class="hero-cta">
@@ -146,7 +149,7 @@
                     <div class="sale-badge">Sale</div>
                     <img src="images/coffee.png" alt="Buy Me a Coffee">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('coffee')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('coffee')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Coffee ☕</h3>
@@ -162,14 +165,17 @@
                     <span class="original-price">₹899</span>
                     <span class="sale-price">₹99</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Coffee ☕" 
-                    data-price="99" 
-                    data-original-price="899"
-                    data-image="images/coffee.png"
-                    data-category="beverages">
-                    Add to Cart
-                </button>
+                 <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Coffee ☕" 
+                        data-price="99" 
+                        data-original-price="899"
+                        data-image="images/coffee.png"
+                        data-category="beverages">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="99">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="beverages">
@@ -177,7 +183,7 @@
                     <div class="sale-badge">Sale</div>
                     <img src="images/tea.png" alt="Buy Me a Tea">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('tea')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('tea')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Tea 🍵</h3>
@@ -193,14 +199,17 @@
                     <span class="original-price">₹849</span>
                     <span class="sale-price">₹19</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Tea 🍵" 
-                    data-price="19" 
-                    data-original-price="849"
-                    data-image="images/tea.png"
-                    data-category="beverages">
-                    Add to Cart
-                </button>
+                <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Tea 🍵" 
+                        data-price="19" 
+                        data-original-price="849"
+                        data-image="images/tea.png"
+                        data-category="beverages">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="19">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="clothing">
@@ -208,7 +217,7 @@
                     <div class="sale-badge">Sale</div>
                     <img src="images/hoodie.png" alt="Buy Me a Hoodie">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('hoodie')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('hoodie')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Hoodie 👕</h3>
@@ -223,13 +232,16 @@
                 <div class="product-price">
                     <span class="sale-price">₹999</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Hoodie 👕" 
-                    data-price="999" 
-                    data-image="images/hoodie.png"
-                    data-category="clothing">
-                    Add to Cart
-                </button>
+                <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Hoodie 👕" 
+                        data-price="999" 
+                        data-image="images/hoodie.png"
+                        data-category="clothing">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="999">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="food">
@@ -237,7 +249,7 @@
                     <div class="sale-badge">Sale</div>
                     <img src="images/biriyani.png" alt="Buy Me a Biriyani">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('biriyani')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('biriyani')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Biriyani 🍛</h3>
@@ -250,17 +262,20 @@
                     <span class="rating-count">(89)</span>
                 </div>
                 <div class="product-price">
-                    <span class="original-price">₹749</span>
+                    <span class="original-price">₹249</span>
                     <span class="sale-price">₹249</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Biriyani 🍛" 
-                    data-price="249" 
-                    data-original-price="749"
-                    data-image="images/biriyani.png"
-                    data-category="food">
-                    Add to Cart
-                </button>
+                 <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Biriyani 🍛" 
+                        data-price="249" 
+                        data-original-price="749"
+                        data-image="images/biriyani.png"
+                        data-category="food">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="249">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="books">
@@ -268,7 +283,7 @@
                     <div class="new-badge">New</div>
                     <img src="images/book.png" alt="Buy Me a Book">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('book')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('book')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Book 📖</h3>
@@ -284,14 +299,17 @@
                     <span class="original-price">₹799</span>
                     <span class="sale-price">₹299</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Book 📖" 
-                    data-price="299" 
-                    data-original-price="799"
-                    data-image="images/book.png"
-                    data-category="books">
-                    Add to Cart
-                </button>
+                <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Book 📖" 
+                        data-price="299" 
+                        data-original-price="799"
+                        data-image="images/book.png"
+                        data-category="books">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="299">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="books">
@@ -299,7 +317,7 @@
                     <div class="new-badge">New</div>
                     <img src="images/pen.png" alt="Buy Me a Pen">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('pen')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('pen')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Pen ✒️</h3>
@@ -315,14 +333,17 @@
                     <span class="original-price">₹699</span>
                     <span class="sale-price">₹99</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Pen ✒️" 
-                    data-price="99" 
-                    data-original-price="699"
-                    data-image="images/pen.png"
-                    data-category="books">
-                    Add to Cart
-                </button>
+                <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Pen ✒️" 
+                        data-price="99" 
+                        data-original-price="699"
+                        data-image="images/pen.png"
+                        data-category="books">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="99">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="food">
@@ -330,7 +351,7 @@
                     <div class="new-badge">New</div>
                     <img src="images/chocolate.png" alt="Buy Me a Chocolate">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('chocolate')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('chocolate')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Chocolate 🍫</h3>
@@ -346,14 +367,17 @@
                     <span class="original-price">₹899</span>
                     <span class="sale-price">₹199</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Chocolate 🍫" 
-                    data-price="199" 
-                    data-original-price="899"
-                    data-image="images/chocolate.png"
-                    data-category="food">
-                    Add to Cart
-                </button>
+                <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Chocolate 🍫" 
+                        data-price="199" 
+                        data-original-price="899"
+                        data-image="images/chocolate.png"
+                        data-category="food">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="199">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="accessories">
@@ -361,7 +385,7 @@
                     <div class="new-badge">New</div>
                     <img src="images/flower.png" alt="Buy Me a Flower">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('flower')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('flower')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Flower 🌹</h3>
@@ -377,21 +401,24 @@
                     <span class="original-price">₹949</span>
                     <span class="sale-price">₹99</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Flower 🌹" 
-                    data-price="99" 
-                    data-original-price="949"
-                    data-image="images/flower.png"
-                    data-category="accessories">
-                    Add to Cart
-                </button>
+                 <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Flower 🌹" 
+                        data-price="99" 
+                        data-original-price="949"
+                        data-image="images/flower.png"
+                        data-category="accessories">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="99">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="books">
                 <div class="product-image">
                     <img src="images/notebook.png" alt="Buy Me a Notebook">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('notebook')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('notebook')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Notebook 📒</h3>
@@ -404,22 +431,25 @@
                     <span class="rating-count">(34)</span>
                 </div>
                 <div class="product-price">
-                    <span class="sale-price">₹649</span>
+                    <span class="sale-price">₹149</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Notebook 📒" 
-                    data-price="649" 
-                    data-image="images/notebook.png"
-                    data-category="books">
-                    Add to Cart
-                </button>
+                <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Notebook 📒" 
+                        data-price="149" 
+                        data-image="images/notebook.png"
+                        data-category="books">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="149">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="accessories">
                 <div class="product-image">
                     <img src="images/mug.png" alt="Buy Me a Mug">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('mug')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('mug')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Mug ☕</h3>
@@ -432,22 +462,25 @@
                     <span class="rating-count">(92)</span>
                 </div>
                 <div class="product-price">
-                    <span class="sale-price">₹749</span>
+                    <span class="sale-price">₹249</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Mug ☕" 
-                    data-price="749" 
-                    data-image="images/mug.png"
-                    data-category="accessories">
-                    Add to Cart
-                </button>
+                <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Mug ☕" 
+                        data-price="249" 
+                        data-image="images/mug.png"
+                        data-category="accessories">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="249">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="accessories">
                 <div class="product-image">
                     <img src="images/candle.png" alt="Buy Me a Candle">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('candle')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('candle')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Candle 🕯️</h3>
@@ -460,22 +493,25 @@
                     <span class="rating-count">(67)</span>
                 </div>
                 <div class="product-price">
-                    <span class="sale-price">₹849</span>
+                    <span class="sale-price">₹149</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Candle 🕯️" 
-                    data-price="849" 
-                    data-image="images/candle.png"
-                    data-category="accessories">
-                    Add to Cart
-                </button>
+                 <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Candle 🕯️" 
+                        data-price="149" 
+                        data-image="images/candle.png"
+                        data-category="accessories">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="149">Donate Now</button>
+                </div>
             </div>
 
             <div class="product-card" data-category="books">
                 <div class="product-image">
                     <img src="images/bookmark.png" alt="Buy Me a Bookmark">
                     <div class="product-overlay">
-                        <button class="quick-view-btn" onclick="openQuickView('bookmark')">Quick View</button>
+                        <button class="quick-view-btn" onclick="aromaApp.openQuickView('bookmark')">Quick View</button>
                     </div>
                 </div>
                 <h3 class="product-name">Buy Me a Bookmark 📖</h3>
@@ -488,15 +524,18 @@
                     <span class="rating-count">(23)</span>
                 </div>
                 <div class="product-price">
-                    <span class="sale-price">₹699</span>
+                    <span class="sale-price">₹99</span>
                 </div>
-                <button class="add-to-cart-btn" 
-                    data-name="Buy Me a Bookmark 📖" 
-                    data-price="699" 
-                    data-image="images/bookmark.png"
-                    data-category="books">
-                    Add to Cart
-                </button>
+                 <div class="product-card-actions">
+                    <button class="add-to-cart-btn" 
+                        data-name="Buy Me a Bookmark 📖" 
+                        data-price="99" 
+                        data-image="images/bookmark.png"
+                        data-category="books">
+                        Add to Cart
+                    </button>
+                    <button class="donate-btn" data-price="99">Donate Now</button>
+                </div>
             </div>
         </div>
     </section>
@@ -529,7 +568,10 @@
                             <button class="qty-increase">+</button>
                         </div>
                     </div>
-                    <button class="modal-add-to-cart" id="modalAddToCart">Add to Cart</button>
+                    <div class="modal-actions">
+                        <button class="modal-add-to-cart" id="modalAddToCart">Add to Cart</button>
+                        <button class="modal-donate-btn">Donate Now</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -598,68 +640,37 @@
                     <i class="fab fa-instagram"></i>
                 </div>
             </div>
-            <div class="insta-item">
-                <img src="images/insta5.jpg" alt="Instagram 5" onerror="this.style.background='linear-gradient(45deg, #a8edea 0%, #fed6e3 100%)'">
-                <div class="insta-overlay">
-                    <i class="fab fa-instagram"></i>
-                </div>
-            </div>
         </div>
     </section>
 
-    <footer id="contact">
+    <footer id="contact-footer">
         <div class="footer-content">
-            <div class="footer-section">
+             <div class="footer-section">
                 <h3>Shop</h3>
                 <ul>
-                    <li><a href="#">All Products</a></li>
-                    <li><a href="#">Beverages</a></li>
-                    <li><a href="#">Food Items</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Gift Sets</a></li>
+                    <li><a href="index.html">All Products</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+             <div class="footer-section">
                 <h3>Learn</h3>
                 <ul>
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Roasting Process</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">Coffee Guides</a></li>
+                    <li><a href="about.html">Our Story</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+             <div class="footer-section">
                 <h3>Support</h3>
                 <ul>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Shipping & Returns</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
                 </ul>
-            </div>
-            <div class="footer-section newsletter-section">
-                <h3>Newsletter</h3>
-                <p>Stay up to date with new product launches, exclusive offers, and behind-the-scenes content.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                </div>
-            </div>
+            </div>            
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Aroma Label. All Rights Reserved.</p>
+            <p>&copy; 2025 Aroma Label. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </body>
 </html>
