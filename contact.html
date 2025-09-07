@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Aroma Label | Get In Touch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header (Consistent with index.html) -->
+    <header>
+        <div class="top-bar">
+            <i class="fas fa-plane"></i>
+            <h4> We don't sell anything.This is a creation of Avijit Saha.You can buy him a coffee.</h4>
+        </div>
+        <nav>
+            <a href="index.html" class="logo">AROMA</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                 <button class="nav-icon cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-20 px-6 md:px-12">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-light text-gray-800">Get In Touch</h1>
+                <p class="text-lg mt-4 text-gray-600">We'd love to hear from you. Whether you have a question, feedback, or just want to say hello, feel free to reach out.</p>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 rounded-lg shadow-xl">
+                <!-- Contact Form -->
+               <form action="https://api.web3forms.com/submit" method="POST">
+
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="My_API)Key">
+
+    <!-- Optional: Subject line for the email you receive -->
+    <input type="hidden" name="subject" value="New Contact Form Submission from Aroma Label">
+    
+    <div class="mb-4">
+        <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" required>
+    </div>
+    <div class="mb-4">
+        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" required>
+    </div>
+    <div class="mb-6">
+        <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500" required></textarea>
+    </div>
+    <div>
+        <button type="submit" class="w-full py-3 px-6 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition duration-300">
+            Send Message
+        </button>
+    </div>
+</form>
+
+<!-- Add this div right after the closing </form> tag to show submission status -->
+<div id="form-result" class="mt-4 text-center"></div>
+
+                <!-- Contact Details -->
+                <div class="space-y-8">
+                     <h2 class="text-2xl font-semibold mb-6">Contact Information</h2>
+                    <div>
+                        <h3 class="text-lg font-semibold flex items-center gap-3"><i class="fas fa-map-marker-alt text-purple-600"></i> Address</h3>
+                        <p class="mt-1 text-gray-600">North 24 Parganas, West Bengal, India</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold flex items-center gap-3"><i class="fas fa-envelope text-purple-600"></i> Email</h3>
+                        <p class="mt-1 text-gray-600">qwerty@qwerty.com</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold flex items-center gap-3"><i class="fas fa-phone text-purple-600"></i> Whatsapp</h3>
+                        <p class="mt-1 text-gray-600">+91 9999999999</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Consistent with index.html) -->
+    <footer id="contact-footer">
+        <div class="footer-content">
+             <div class="footer-section">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="index.html">All Products</a></li>
+                </ul>
+            </div>
+             <div class="footer-section">
+                <h3>Learn</h3>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                </ul>
+            </div>
+             <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+                    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aroma Label. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
