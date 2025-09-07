@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-page {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+        .product-page img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .product-page h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .product-page p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .product-page .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .product-page .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .product-page .buttons button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #6a0dad, #9b30ff);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .product-page .buttons button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+        }
+    </style>
+</head>
+<body>
+    <div class="product-page">
+        <img id="product-img" src="" alt="Product Image">
+        <h1 id="product-title"></h1>
+        <p id="product-desc"></p>
+        <div class="price" id="product-price"></div>
+        <div class="buttons">
+            <button id="buy-now">Buy Now</button>
+            <button id="add-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        // Get query parameters
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const price = params.get('price');
+        const desc = params.get('desc');
+        const img = params.get('img');
+
+        // Populate the page
+        document.getElementById('product-title').innerText = name;
+        document.getElementById('product-price').innerText = price;
+        document.getElementById('product-desc').innerText = desc;
+        document.getElementById('product-img').src = img;
+
+        // Buttons
+        document.getElementById('buy-now').addEventListener('click', () => {
+            alert(`Buy Now clicked for ${name}`);
+        });
+
+        document.getElementById('add-cart').addEventListener('click', () => {
+            alert(`${name} added to cart!`);
+        });
+    </script>
+</body>
+</html>
